@@ -61,16 +61,16 @@ public class List {
      *  that has the same chr value as the given char,
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
-            Node current = first;
-            int index = 0;
-            while (current != null) {
-               if (current.cp.equals(chr) ) {
-                 return index;
-               }
+        Node current = first;
+        int index = 0;
+        while (current != null) {
+            if (current.cp.equals(chr)) {
+                return index;
+            }
             current = current.next;
             index++;
-            }
-            return -1;
+        }
+        return -1;
               
         }
     
