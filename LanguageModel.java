@@ -35,7 +35,6 @@ public class LanguageModel {
 	public void train(String fileName) {
         String window = "";
         char c;
-        // Reads just enough characters to form the first window
         In in = new In(fileName);
         for (int i = 0; i < windowLength; i++) {
             window = window + in.readChar();
@@ -44,11 +43,8 @@ public class LanguageModel {
         // Processes the entire text, one character at a time
         while (!in.isEmpty()) {
             c = in.readChar();
-
             List probs = CharDataMap.get(window);
-            // If the window was not found in the map
-            if (probs == null) {
-                // Creates a new empty list, and adds (window,list) to the map
+            if (probs == null) { 
                 probs = new List();
                 CharDataMap.put(window, probs);
             }
