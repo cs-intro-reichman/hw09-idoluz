@@ -44,17 +44,11 @@ public class List {
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-        StringBuilder newString = new StringBuilder("(");
-        if (this.size == 0) {
-            return "()";
+        String builder = "(";
+        for (int i = 0; i < size; i++) {
+            builder += this.listIterator(i).current + " ";
         }
-        Node current = this.first;
-        while( current != null){
-        newString.append(current).append(" ");
-        current = current.next;
-        }
-        
-        return newString + ")";
+        return builder.substring(0,builder.length() - 1) + ")";
     }
 
     /** Returns the index of the first CharData object in this list
